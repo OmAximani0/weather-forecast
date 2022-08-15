@@ -1,6 +1,7 @@
 // Importing required libraries
 const express = require("express")
 const utils = require("./utils")
+const cors = require("cors")
 
 // Defining default port for app
 const PORT = process.env.PORT || 5000
@@ -8,7 +9,9 @@ const PORT = process.env.PORT || 5000
 // Creating express instance
 const app = express()
 
+// Initializing middlewares
 app.use(express.json())
+app.use(cors())
 
 // Initializing root endpoint
 app.get("/", (req, res) => {
@@ -44,7 +47,7 @@ app.post("/getWeather", async (req, res) => {
         }
     })
 
-    res.json(response)
+    res.status(200).json(response)
 })
 
 // Listening express app
