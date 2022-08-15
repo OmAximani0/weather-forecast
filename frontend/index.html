@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>City Temperature</title>
+    <link type="image/png" sizes="32x32" rel="icon" href="./assets/icons8-temperature-flaticons-lineal-color-32.png">
+    <!-- Bootstrap CSS CDN link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Navbar.sction.start -->
+    <nav class="navbar bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="#">
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABmJLR0QA/wD/AP+gvaeTAAADuElEQVRYhe2YXUxTZxjH/+er0lK1pC2CwKBgDAkfEwU1C3WbF2aJmnBjliVsHQnzI+odN5JdNJkxMTGSYLCQxpAlfo2MZBmZ2ZJdwaJRUcniB1jbISDY0jb088A57Tm7UMk5p4hgy0ETfnfP8/7Pk/95njfveXOAj4lhm83tOXp052r7kEJKg6KqqlKSpgdGbLa+R3a7ZrVMSZEZJCkKm8rKNObS0gO0xzPham5uXC1jbyCkAdvWJkrjwPi4EPH57uXo9QfyOjt96lp7BbnYorGoiCyoqKiL8vyIq6nplFqmpMg66GttFdebzQsKQ1NTCHm9w4xO11DqcIyo4g6KDoaqazHheoYEx6UIN+bno6CyshyCMORqavpZtNsX7X6mkHXQFRZFIhaBcKkDuuA0jIWFAEGkPBQLBuF//nyS0Wp/KOvquqGqwfng/m2IvVdhzjUjS69PeVAUBPhHR3k2HO7Pyc5uyL14MaquQQAEz0O47ATjeoJciwUkmTrVuVgMPrfbT9J06xan06mqwXmR+yn4bgdMG/TQG40LFgpNToohr3dIZzQeLGpre6GqwXl++wW41Y98SwkohklZTvI8vG53NMlxV7d2dx95W5nTlwcd+bmGr6S5Kd/Mnz821h5Taul3vYGMhq+B+r2YcLbDIPDYmJcnW6YYBpvLy/UvHj8+DOCtBimK0u7ZXVYizf36x5B2Ie3yjwqTGdSpnxDZsw/jnv/AsWyKhKbpxSfxmkCcRyDOAwASieS2lo4Be0vHgF1Wa9kG32DdC2LHLrzsdiBrdBTm4mIQCxxJS4WmqaFzx612ZT69w1aXDfJ4C7hDNoy5PWBDofculfkOSqmuAVXVDv+VSyAfPgCSyWW3cmU6KIUgQDQ248m+bzE7MzOZqbIZ/55GTZtR2dNTsBSttu8atH3XAKz0iDPAyo84TdY6uFKsGVRyqKeH0mqZcmVer9NUn2y/sU6ZV30PVkQs+2ushdsF7xRmf++FKArQ7Lairqb405n47HcAZHdK1TuoyaLqcgw6hrt/F0I8BpFlwd25iZwNOlJDUbVKveoGoxzXPx2MzWl2fgbasgXUJyVYV/8F/MFYguW4AaVe9RGf+X7X36beh7dM1q2fG853EgAwN5fAnX+G7+JZ7PqqGwRBiOGuwf1/9Y9cMKzP2kaSBBEKs498Ae7EWfuXiRS5NHjnlX8JDP47hm/qi9//Yqhg7RxMF9kefDodT7sgywtp15DywXdwzWC6yPagdyz9n6gBfyTtGh8V/wNCIGtZA1v9qwAAAABJRU5ErkJggg=="
+          />
+          <span class="navbar-brand mb-0 h1">City Temperature</span>
+        </a>
+      </div>
+    </nav>
+    <!-- Navbar.sction.end -->
+
+    <!-- Main.section.start -->
+    <main class="container my-4">
+      <p class="display-5 text-center">
+        Enter city names below to get current temperature
+      </p>
+
+      <!-- Form for city inputs -->
+      <form class="d-block w-75 mx-auto my-4">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"> City Names: </label>
+          <input
+            type="text"
+            name="cities"
+            class="form-control"
+            id="cities-input"
+            placeholder="Toronto, Mumbai, London"
+            value=""
+          />
+          <div id="cities-help" class="form-text">
+            If you have two or more names then enter comma seperated values 
+          </div>
+        </div>
+        
+        </div>
+        <button id="submit-form" type="submit" class="btn btn-primary d-block mx-auto">Submit</button>
+      </form>
+
+      <!-- Alert if anythong goes wrong -->
+      <div id="alert-secton"></div>
+
+      <!-- Card for showing temperature -->
+      <div id="card-section" class="row justify-content-evenly g-4"></div>
+      
+    </main>
+    <!-- Main.section.end -->
+
+    <!-- Bootstrap JavaSCript CDN link -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Custom JavaScript -->
+    <script src="./static/js/main.js"></script>
+  </body>
+</html>
